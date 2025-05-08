@@ -1,0 +1,12 @@
+
+.filter-button{
+    width: 100%;
+    text-align: end;
+    /* float: right; */
+}
+
+.ant-modal-confirm-btns .ant-btn-primary:hover {
+    border-color: #3B82F6 !important;
+    color: #3B82F6 !important;
+    background-color: white !important;
+}

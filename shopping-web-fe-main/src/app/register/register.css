@@ -1,0 +1,18 @@
+
+.import-btn :where(.css-dev-only-do-not-override-byeoj0).ant-btn,
+.submit-button :where(.css-dev-only-do-not-override-byeoj0).ant-btn {
+    /* color: black;
+    border: 1px solid;
+    text-align: center; */
+}
+.import-btn ,
+.submit-button{
+    text-align: end;
+}
+
+.ant-btn{
+    text-align: center;
+}
+
+
+

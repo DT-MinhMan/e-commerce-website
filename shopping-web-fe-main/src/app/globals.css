@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+/*______________________________________________________________SIDER CSS______________________________________________________________*/
+div.ant-layout-sider-children {
+  background-color: #E7E5E4;
+  /* background-color: #242C64; */
+  flex: 0 0 auto !important;
+  max-width: none !important;
+  min-width: 10px !important;
+  height: 100%;
+  overflow: auto;
+}
+
+ul.ant-menu{
+  background-color: #E7E5E4;
+}
+
+li.ant-menu-item.ant-menu-item-selected{
+  background-color: #FAFAFA;
+  /* color: #FFA500; */
+}
+
+:where(.css-dev-only-do-not-override-byeoj0).ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title,
+:where(.css-dev-only-do-not-override-byeoj0).ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title{
+  /* color: #FFA500; */
+}
+/*______________________________________________________________HEADER CSS______________________________________________________________*/
+
+
+
+/*______________________________________________________________MAIN CSS______________________________________________________________*/
+.title{
+  text-align: center;
+}
+.ant-btn{
+  text-align: center;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
