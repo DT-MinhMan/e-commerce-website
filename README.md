@@ -1,23 +1,35 @@
-E-Commerce Website
-Hệ thống Web Thương Mại Điện Tử gồm:
-* Backend: Sails.js (Node.js) + PostgreSQL
-* Frontend: Next.js 13 (App Router) + Ant Design + TailwindCSS
-Tổng quan hệ thống
+
+# 🛒 E-Commerce Website Fullstack
+### Hệ thống Thương mại Điện tử: Sails.js API & Next.js 13 (App Router)
+
+![Node.js](https://img.shields.io/badge/Node.js-18.16+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Sails.js](https://img.shields.io/badge/Sails.js-v1.5-00a8e1?style=for-the-badge&logo=sailsdotjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v12+-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-13.4-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+
+---
+
+## 🏗 Tổng quan hệ thống
+Hệ thống bao gồm hai phần tách biệt:
+```text
 e-commerce-website/
 │
-├── shopping-web-be-main/   # Backend - Sails.js API
-└── shopping-web-fe-main/   # Frontend - Next.js 13
-1/ Backend – Sails.js API
-* Công nghệ sử dụng: 
-- Sails.js v1.5
-- PostgreSQL
-- sails-postgresql adapter
-- bcryptjs
-- UUID
-- Redis (connect-redis, socket.io-redis)
-- Node.js ^18.16
+├── shopping-web-be-main/    # Backend - Sails.js API
+└── shopping-web-fe-main/    # Frontend - Next.js 13
+```
+## 1️⃣ Backend – Sails.js API
+🛠 Công nghệ sử dụng
+```text
+Framework: Sails.js v1.5
 
-* Cấu trúc chính
+Database: PostgreSQL (sails-postgresql adapter)
+
+Library: bcryptjs, UUID, Redis (connect-redis, socket.io-redis)
+
+Runtime: Node.js ^18.16
+```
+### 📂 Cấu trúc cây (Backend)
+```text
 shopping-web-be-main/
 │
 ├── api/
@@ -40,48 +52,46 @@ shopping-web-be-main/
 ├── config/
 ├── app.js
 └── package.json
+```
+### 🚀 Cài đặt & Chạy
+Cài đặt: 
+```bash
+🔴 cd shopping-web-be-main
 
-* Cài đặt Backend
-- Yêu cầu:
-Node.js >= 18.16
-PostgreSQL
-Redis (nếu sử dụng session/socket)
-- Cài dependencies:;
-cd shopping-web-be-main
-npm install
-- Cấu hình Database:
-Mở file:
-config/datastores.js
-- Cấu hình PostgreSQL:
-default: {
-  adapter: 'sails-postgresql',
-  url: 'postgresql://username:password@localhost:5432/database_name'
-}
-- Chạy server:
-npm start
-Backend mặc định chạy tại: http://localhost:1337
+🔴 npm install
+```
 
-* API hiện có
-Ví dụ:
-Method	Endpoint	Chức năng
-POST	/product/add	Thêm sản phẩm
-GET	/product/get-list	Lấy danh sách sản phẩm
-POST	/color/add	Thêm màu
-POST	/material/add	Thêm chất liệu
-POST	/size/add	Thêm size
-POST	/type/add	Thêm loại
+Cấu hình: 
+```bash
+🔴 Sửa file config/datastores.js với URL PostgreSQL của bạn.
+```
+Chạy: 
 
-2/Frontend – Next.js 13
-* Công nghệ sử dụng
-- Next.js 13.4 (App Router)
-- React 18
-- Ant Design 5
-- TailwindCSS
-- Axios
-- Dayjs / Moment
-- React Router DOM
+```bash
+🔴 npm start (Mặc định tại: http://localhost:1337)
+```
+### 📡 Danh sách API hiện có
 
-* Cấu trúc chính
+| Phương thức | Endpoint | Chức năng |
+| :---: | :--- | :--- |
+| 🔵 **POST** | `/product/add` | Thêm sản phẩm mới |
+| 🟢 **GET** | `/product/get-list` | Lấy danh sách sản phẩm |
+| 🔵 **POST** | `/color/add` | Thêm màu sắc mới |
+| 🔵 **POST** | `/material/add` | Thêm chất liệu mới |
+
+
+## 2️⃣ Frontend – Next.js 13
+
+### 🛠 Công nghệ sử dụng
+```text
+Framework: Next.js 13.4 (App Router), React 18
+
+UI: Ant Design 5, TailwindCSS
+
+Tools: Axios, Dayjs/Moment, React Router DOM
+```
+### 📂 Cấu trúc cây (Frontend)
+``` text 
 shopping-web-fe-main/
 │
 ├── src/
@@ -103,54 +113,62 @@ shopping-web-fe-main/
 │
 ├── public/
 └── package.json
+```
+### 🚀 Cài đặt & Chạy
+Cài đặt: 
+```bash
+🔴 cd shopping-web-fe-main
 
-* Cài đặt Frontend
-- Cài dependencies:
-cd shopping-web-fe-main
-npm install
-- Cấu hình API URL:
-Mở file: src/api/apiConfig.ts
-Đảm bảo baseURL trỏ về backend: export const API_BASE_URL = "http://localhost:1337";
-- Chạy dự án
-npm run dev
-Ứng dụng chạy tại: http://localhost:3000
+🔴 npm install
+```
+Cấu hình: 
+```bash
+🔴 Sửa file src/api/apiConfig.ts trỏ baseURL về http://localhost:1337.
+```
+Chạy:
+```bash 
+🔴 npm run dev (Mặc định tại: http://localhost:3000)
+```
+### ✨ Tính năng chính
+``` text
+👤 Người dùng
+- Xem danh sách và chi tiết sản phẩm.
 
-* Luồng hoạt động hệ thống: 
-- Frontend gọi API qua Axios
-- Backend Sails xử lý request
-- ORM kết nối PostgreSQL
-- Trả dữ liệu về frontend
-- Frontend render UI bằng Ant Design + Tailwind
+- Quản lý giỏ hàng, tạo đơn hàng và thanh toán.
 
- * Tính năng chính
- ** Người dùng
-- Xem danh sách sản phẩm
-- Xem chi tiết sản phẩm
-- Thêm vào giỏ hàng
-- Tạo đơn hàng
-- Thanh toán
+🔐 Admin
+- Quản lý sản phẩm (Thêm, Màu sắc, Chất liệu, Size, Loại).
 
-** Admin 
-- Thêm sản phẩm
-- Thêm màu sắc
-- Thêm chất liệu
-- Thêm size
-- Thêm loại sản phẩm
-- Quản lý người dùng
+- Quản lý người dùng.
+```
+### 🔄 Luồng hoạt động:
+``` text
+- Frontend gửi yêu cầu qua Axios đến Backend.
 
-* Môi trường phát triển
-- Thành phần: Port
-- Backend: 1337
-- Frontend: 3000
-- Database: 5432
+- Backend Sails tiếp nhận và xử lý request logic.
 
-* Build Production
-- Backend: NODE_ENV=production node app.js
-- Frontend
-npm run build
+- ORM kết nối và thực hiện truy vấn trên PostgreSQL.
+
+- Dữ liệu được trả về và Next.js thực hiện render UI.
+```
+### 📦 Triển khai (Build Production)
+
+🔴Backend:
+```
+NODE_ENV=production node app.js
+```
+
+🔴Frontend:
+ ```
+npm run build 
 npm run start
+```
 
-* Yêu cầu hệ thống
-Node.js >= 18
-PostgreSQL >= 12
-npm >= 9
+### 💻 Yêu cầu hệ thống
+```text
+- Node.js: >= 18
+
+- PostgreSQL: >= 12
+
+- npm: >= 9
+```
